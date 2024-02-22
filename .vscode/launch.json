@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "u:/University/Anul 3/Modul 3/LF&C/GithubProject/Limbaje",
-      "program": "u:/University/Anul 3/Modul 3/LF&C/GithubProject/Limbaje/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
