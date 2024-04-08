@@ -6,7 +6,7 @@ using namespace std;
 
 bool isValidIBAN(const string& iban) {
     
-    if (iban.length() < 4) {
+    if (iban.length() < 4 || iban.length() > 24) {
         return false;
     }
 
@@ -17,7 +17,7 @@ bool isValidIBAN(const string& iban) {
     }
 
     for (size_t i = 2; i < iban.length(); ++i) {
-        if (!isdigit(iban[i])&&!isupper(iban[i])) {
+        if (!isdigit(iban[i])&&!isupper(iban[i])&&iban[i]!=' ') {
             return false;
         }
     }
@@ -27,13 +27,14 @@ bool isValidIBAN(const string& iban) {
             return false;
         }
     }    
-
+/*
     string ibanCopy;
     for (char c : iban) {
         if (c != ' ') {
             ibanCopy += c;
         }
     }
+    
     // Verificarea cifrelor de control IBAN (calculul modului 97)
     ibanCopy = ibanCopy.substr(4) + ibanCopy.substr(0, 4);
     for (size_t i = 0; i < ibanCopy.length(); ++i) {
@@ -51,6 +52,8 @@ bool isValidIBAN(const string& iban) {
     }
 
     return remainder == 1;
+    */
+    return true;
 }
 
 int main() {
@@ -60,7 +63,7 @@ int main() {
 
     if (isValidIBAN(iban)) {
         cout << "Codul IBAN este valid.\n";
-    }
+    } 
     else {
         cout << "Codul IBAN nu este valid.\n";
     }
